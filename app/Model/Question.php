@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
+
+    protected $guarded = [];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -22,5 +25,19 @@ class Question extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function getPathAttribute(){
+        return asset("api/question/$this->slug");
     }
 }
