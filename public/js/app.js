@@ -24984,7 +24984,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('AppHome', __webpack_requi
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app',
-  router: router
+  router: __WEBPACK_IMPORTED_MODULE_2__Router_Router_js__["a" /* default */]
 });
 
 /***/ }),
@@ -65009,6 +65009,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -65083,6 +65084,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -65102,7 +65105,7 @@ var render = function() {
       _c("v-spacer"),
       _vm._v(" "),
       _c(
-        "v-toolbar-items",
+        "div",
         { staticClass: "hidden-sm-and-down" },
         [
           _c("v-btn", { attrs: { flat: "" } }, [_vm._v("Forum")]),
@@ -65111,7 +65114,12 @@ var render = function() {
           _vm._v(" "),
           _c("v-btn", { attrs: { flat: "" } }, [_vm._v("Category")]),
           _vm._v(" "),
-          _c("v-btn", { attrs: { flat: "" } }, [_vm._v("Login")])
+          _c(
+            "router-link",
+            { attrs: { to: "/login" } },
+            [_c("v-btn", { attrs: { flat: "" } }, [_vm._v("Login")])],
+            1
+          )
         ],
         1
       )
@@ -65231,7 +65239,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("toolbar"), _vm._v(" "), _c("app-footer")], 1)
+  return _c(
+    "div",
+    [
+      _c("toolbar"),
+      _vm._v(" "),
+      _c("router-view"),
+      _vm._v(" "),
+      _c("app-footer")
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -65251,18 +65269,23 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_Login__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_Login___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Login_Login__);
 
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
-var routes = [{ path: '/foo', component: Foo }, { path: '/bar', component: Bar }];
+
+var routes = [{ path: '/login', component: __WEBPACK_IMPORTED_MODULE_2__components_Login_Login___default.a }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-  routes: routes // short for `routes: routes`
+  routes: routes, // short for `routes: routes`
+  hashbang: false,
+  mode: 'history'
 });
 
-/* unused harmony default export */ var _unused_webpack_default_export = (router);
+/* harmony default export */ __webpack_exports__["a"] = (router);
 
 /***/ }),
 /* 51 */
@@ -67899,6 +67922,176 @@ if (inBrowser && window.Vue) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(59)
+/* template */
+var __vue_template__ = __webpack_require__(60)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Login/Login.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-678beb3c", Component.options)
+  } else {
+    hotAPI.reload("data-v-678beb3c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            form: {
+                email: null,
+                password: null
+            }
+        };
+    },
+
+
+    methods: {
+        login: function login() {
+            axios.post('/api/auth/login', this.form).then(function (res) {
+                return console.log(res.data);
+            }).catch(function (error) {
+                return console.log(error.response.data);
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    [
+      _c(
+        "v-form",
+        {
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.login($event)
+            }
+          }
+        },
+        [
+          _c("v-text-field", {
+            attrs: { type: "email", label: "E-mail", required: "" },
+            model: {
+              value: _vm.form.email,
+              callback: function($$v) {
+                _vm.$set(_vm.form, "email", $$v)
+              },
+              expression: "form.email"
+            }
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: { label: "password", type: "password", required: "" },
+            model: {
+              value: _vm.form.password,
+              callback: function($$v) {
+                _vm.$set(_vm.form, "password", $$v)
+              },
+              expression: "form.password"
+            }
+          }),
+          _vm._v(" "),
+          _c("v-btn", { attrs: { color: "green", type: "submit" } }, [
+            _vm._v("Login")
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-678beb3c", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
