@@ -13,3 +13,4 @@
 
 Route::view('/', 'home');
 Route::view('/{eny}', 'home');
+Route::view('/{eny}/{eny1}', 'home');

@@ -7,11 +7,15 @@ import Login from '../components/Login/Login'
 import Logout from '../components/Login/Logout'
 import Signup from '../components/Login/Signup'
 import Forum from '../components/Forum/Forum'
+import Read from '../components/Forum/Read'
+import Create from '../components/Forum/Create'
 const routes = [
   { path: '/login', component: Login },
   { path: '/logout', component: Logout },
   { path: '/signup', component: Signup },
   { path: '/forum', component: Forum, name:'forum'},
+  { path: '/question/:slug', component: Read, name:'read'},
+  { path: '/ask', component: Create},
 ]
 
 const router = new VueRouter({

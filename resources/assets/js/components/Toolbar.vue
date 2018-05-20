@@ -22,7 +22,7 @@
         	return{
         		items:[
         			{ title:'Forum', to:'/forum', show: true },
-        			{ title:'Ask Question', to:'/question', show: User.loggedin()},
+        			{ title:'Ask Question', to:'/ask', show: User.loggedin()},
         			{ title:'Category', to:'/category', show: User.loggedin()},
         			{ title:'Sign Up', to:'/signup', show: ! User.loggedin()},
         			{ title:'Login', to:'/login', show: ! User.loggedin()},
