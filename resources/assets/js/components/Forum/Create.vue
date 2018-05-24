@@ -8,14 +8,14 @@
 	    required
 	  ></v-text-field>
 
-	  <v-select
-        :items="categories"
-        v-model="form.category_id"
-        item-text="name"
-        item-value="id"
-        label="Category"
-        autocomplete
-      ></v-select>
+      <v-select
+		 :items="categories"
+		 item-text="name"
+		 item-value="id"
+		 v-model="form.category_id"
+		 label="Category"
+		 autocomplete
+		 ></v-select>
 
       <markdown-editor v-model="form.body"></markdown-editor>
 

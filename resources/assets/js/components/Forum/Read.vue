@@ -12,14 +12,20 @@
 				v-if="question">	
 			</show-question>   
 		</div>
+        <v-container>
+          <replies v-if="question" :question="question"></replies>
+          <new-reply v-if="question" :questionSlug="question.slug"></new-reply>
+        </v-container>
 	</div>
 </template>
 
 <script>
     import ShowQuestion from './ShowQuestion'
     import EditQuestion from './EditQuestion'
+    import Replies from '../Reply/Replies'
+    import NewReply from '../Reply/NewReply'
     export default {
-    	components:{ ShowQuestion, EditQuestion },
+    	components:{ ShowQuestion, EditQuestion, Replies, NewReply },
         data(){
         	return{
         		question:null,
